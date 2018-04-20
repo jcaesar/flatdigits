@@ -1,0 +1,11 @@
+{
+	"name": "gtest",
+		"sources": [
+		{
+			"type": "git",
+			"url": "https://github.com/google/googletest",
+			"branch": "ec44c6c1675c25b9827aacd08c02433cccde7780"
+		}
+		],
+		"buildsystem": "cmake"
+},

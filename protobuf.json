@@ -1,0 +1,23 @@
+{
+	"name": "protobuf",
+	"sources": [
+		{
+			"type": "git",
+			"url": "https://github.com/google/protobuf.git",
+			"branch": "b50c9ec1223895973d0e2fa6b6cb74ec3c8f3ce8"
+		},
+		{
+			"type": "file",
+			"url": "https://github.com/google/googlemock/archive/release-1.7.0.zip",
+			"sha256": "407992e9ef17a08339cd383c33dbaff923969cfa01f8e4ceaeea679400016d85"
+		},
+		{
+			"type": "file",
+			"url": "https://github.com/google/googletest/archive/release-1.7.0.zip",
+			"sha256": "b58cb7547a28b2c718d1e38aee18a3659c9e3ff52440297e965f5edffe34b6d0"
+		}
+	],
+	"env": {
+		"curlopts": "-V make curl noop"
+	}
+},

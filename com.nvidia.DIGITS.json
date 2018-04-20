@@ -1,0 +1,117 @@
+{
+	"app-id": "com.nvidia.DIGITS",
+	"runtime": "org.freedesktop.Platform",
+	"runtime-version": "1.6",
+	"sdk": "org.freedesktop.Sdk",
+	"command": "digits",
+	"finish-args": [
+		"--share=ipc",
+		"--device=dri"
+	],
+	"modules": [
+		{
+			"name": "protobuf",
+			"config-opts": ["--disable-static"],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://github.com/google/protobuf/archive/v3.5.1/protobuf-3.5.1.tar.gz",
+					"sha256": "826425182ee43990731217b917c5c3ea7190cfda141af4869e6d4ad9085a740f"
+				},
+				{
+					"type": "archive",
+					"url": "https://github.com/google/googlemock/archive/release-1.7.0.tar.gz#/googlemock-1.7.0.tar.gz",
+					"sha256": "3f20b6acb37e5a98e8c4518165711e3e35d47deb6cdb5a4dd4566563b5efd232",
+					"dest": "gmock"
+				},
+				{
+					"type": "archive",
+					"url": "https://github.com/google/googletest/archive/release-1.7.0.tar.gz#/googletest-1.7.0.tar.gz",
+					"sha256": "f73a6546fdf9fce9ff93a5015e0333a8af3062a152a9ad6bcb772c96687016cc",
+					"dest": "gmock/gtest"
+				}
+			]
+		},
+		{
+			"name": "pip-caffe-requirements",
+			"buildsystem": "simple",
+			"sources": [
+				{ "type": "file", "sha256": "1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d", "url": "https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "daf96e0d232605e979995795f62ffd24c5c6ecea4526e4cbb86d80f01da954b2", "url": "https://files.pythonhosted.org/packages/19/eb/c4d9f3beafd5ac0615936860bcee41d93ca58f8734a16715da0037d2c468/Cython-0.28.2-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "2c51dff8ef3c447388fe5e4453d24a2bf128d3a4c32af3fabef1f01c6851ab82", "url": "https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "537a60879485e5ce484ab4350c7bd8b3da4b531f9f82ef0a18780beabde98c90", "url": "https://files.pythonhosted.org/packages/f2/b8/a63fcc840bba5c76e453dd712dbca63178a264c8990e0086b72965d4e954/h5py-2.7.1-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "0a45d844d11bec910974ed4adf5de60d42dc34b60960f8cc2b857e2008fba550", "url": "https://files.pythonhosted.org/packages/3d/f0/3770e603de61f62bc9f1935305daf0a66ec2e699b8617d466cc47803f5ba/ipython-5.4.1-py3-none-any.whl" },
+				{ "type": "file", "sha256": "72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8", "url": "https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "acb673eecbae089ea3be3dcf75bfe45fc8d4dcdc951e27d8691887963cf421c7", "url": "https://files.pythonhosted.org/packages/69/a7/88719d132b18300b4369fbffa741841cfd36d1e637e1990f27929945b538/kiwisolver-1.0.1-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "9c3378b3b4336cc63303e9fe5d054a337d50bafec80ac4628db19a598c0fcd38", "url": "https://files.pythonhosted.org/packages/ec/c1/ca3b4199bd4073e6430076f1edd8061f2f548e831eeddc3cbc077ebaa0ca/leveldb-0.194.tar.gz" },
+				{ "type": "file", "sha256": "8944d311ce37bee1ba0e41a9b58dcf330ffe0cf29d7654c3d07c572215da68ac", "url": "https://files.pythonhosted.org/packages/49/b8/89dbd27f2fb171ce753bb56220d4d4f6dbc5fe32b95d8edc4415782ef07f/matplotlib-2.2.2-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "64272ca418972b70a196cb15d9c85a5a6041f09a2f32e0d30c0255f25d458bb1", "url": "https://files.pythonhosted.org/packages/11/42/f951cc6838a4dff6ce57211c4d7f8444809ccbe2134179950301e5c4c83c/networkx-2.1.zip" },
+				{ "type": "file", "sha256": "9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac", "url": "https://files.pythonhosted.org/packages/15/d8/dd071918c040f50fa1cf80da16423af51ff8ce4a0f2399b7bf8de45ac3d9/nose-1.3.7-py3-none-any.whl" },
+				{ "type": "file", "sha256": "a1d1268d200816bfb9727a7a27b78d8e37ecec2e4d5ebd33eb64e2789e0db43e", "url": "https://files.pythonhosted.org/packages/1a/5c/57c6920bf4a1b1c11645b625e5483d778cedb3823ba21a017112730f0a12/numpy-1.11.0.tar.gz" },
+				{ "type": "file", "sha256": "c372db80a5bcb143c9cb254d50f902772c3b093a4f965275197ec2d2184b1e61", "url": "https://files.pythonhosted.org/packages/da/c6/0936bc5814b429fddb5d6252566fe73a3e40372e6ceaf87de3dec1326f28/pandas-0.22.0-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "9783f4644a3ef8528a6f20374eeb434431a650c797ca6d8df0d81e30fffdfa24", "url": "https://files.pythonhosted.org/packages/b9/3c/e51a76fe78a877afd9acd95a51e3b7610c0983b19ef5a5dfa11735a619b8/pexpect-4.5.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "c9a2541f25aeabc070f12f452e1f2a8eae2abd51e1cd19e8430402bdf4c1d8b5", "url": "https://files.pythonhosted.org/packages/9f/17/daa142fc9be6b76f26f24eeeb9a138940671490b91cb5587393f297c8317/pickleshare-0.7.4-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "f5f302db65e2e0ae96e26670818157640d3ca83a3054c290eff3631598dcf819", "url": "https://files.pythonhosted.org/packages/5f/4b/8b54ab9d37b93998c81b364557dff9f61972c0f650efa0ceaf470b392740/Pillow-5.1.0-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "1df952620eccb399c53ebb359cc7d9a8d3a9538cb34c5a1344bdbeb29fbcc381", "url": "https://files.pythonhosted.org/packages/04/d1/c6616dd03701e7e2073f06d5c3b41b012256e42b72561f16a7bd86dd7b43/prompt_toolkit-1.0.15-py3-none-any.whl" },
+				{ "type": "file", "sha256": "d5d9edfdc5a3a01d06062d677b121081629782edf0e05ca1be14f15bb947eeee", "url": "https://files.pythonhosted.org/packages/74/ad/ecd865eb1ba1ff7f6bd6bcb731a89d55bc0450ced8d457ed2d167c7b8d5f/protobuf-3.5.2.post1-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a", "url": "https://files.pythonhosted.org/packages/ff/4e/fa4a73ccfefe2b37d7b6898329e7dbcd1ac846ba3a3b26b294a78a3eb997/ptyprocess-0.5.2-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d", "url": "https://files.pythonhosted.org/packages/02/ee/b6e02dc6529e82b75bb06823ff7d005b141037cb1416b10c6f00fc419dca/Pygments-2.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010", "url": "https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "6f197348b46fb8cdf9f3fcfc2a7d5a97da95db3e2e8667cf657216274fe1b009", "url": "https://files.pythonhosted.org/packages/b4/7c/df59c89a753eb33c7c44e1dd42de0e9bc2ccdd5a4d576e0bfad97cc280cb/python-dateutil-1.5.tar.gz" },
+				{ "type": "file", "sha256": "40ae131e899ef68e9e14aa53ca063839c34f6a168afe622217b5b875492a1ee2", "url": "https://files.pythonhosted.org/packages/df/ec/e31302d355bcb9d207d9b858adc1ecc4a6d8c855730c8ba4ddbdd3f8eb8d/python-gflags-3.1.2.tar.gz" },
+				{ "type": "file", "sha256": "65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555", "url": "https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "f801fa177f2756da4d7c25ff49f0f09bf56adbdfb1e05582f377948d2faf18de", "url": "https://files.pythonhosted.org/packages/32/c0/3646053c0ce297686da524bc968bff6017151a9089d16c33afe7d330a48b/PyWavelets-0.5.2-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab", "url": "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz" },
+				{ "type": "file", "sha256": "5c27b7b7500e3405114c8fda474a5be27823741c0e8e7cdb7142c8da8895f8fb", "url": "https://files.pythonhosted.org/packages/60/0e/75fbf63c3b7a14fdbfaf92ca77035c18e90963003031148211bf12441be7/scikit_image-0.13.1-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "89c1d2a80760a373e7f12f490446c60a7221b641435a789439e8ddb01f5ab7d4", "url": "https://files.pythonhosted.org/packages/2c/13/eb888fcc83f14d114dee794c3491477ce156caa9f456b7bef1112dde36b5/scipy-1.0.1-cp36-cp36m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "8010754433e3211b9cdbbf784b50f30e80bf40fc6b05eb5f865fab83300599b8", "url": "https://files.pythonhosted.org/packages/20/d7/04a0b689d3035143e2ff288f4b9ee4bf6ed80585cc121c90bfd85a1a8c2e/setuptools-39.0.1-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173", "url": "https://files.pythonhosted.org/packages/3d/57/4d9c9e3ae9a255cd4e1106bb57e24056d3d0709fc01b2e3e345898e49d5b/simplegeneric-0.8.1.zip" },
+				{ "type": "file", "sha256": "832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb", "url": "https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "c6cb5e6f57c5a9bdaa40fa71ce7b4af30298fbab9ece9815b5d995ab6217c7d9", "url": "https://files.pythonhosted.org/packages/93/d6/abcb22de61d78e2fc3959c964628a5771e47e7cc60d53e9342e21ed6cc9a/traitlets-4.3.2-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c", "url": "https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl" },
+				{
+					"type": "file",
+					"url": "https://raw.githubusercontent.com/NVIDIA/caffe/4b8d54d892116b9cb6822a917065a616f56b1292/python/requirements.txt",
+					"sha256": "5cd39c8169ce6f19c7a1969f3edd7b21c4bd8665e567208e534ff42db98d504d"
+				}
+			],
+			"build-commands": [
+				"pip3 install *whl",
+				"#pip2 install ipython==5.4.1",
+				"#pip2 install tornado==4.5.3",
+				"pip2 install -r requirements.txt --no-index --find-links=."
+			]
+		},
+		"cx.ring.Ring/org.boost.Boost.json",
+		{
+			"name": "caffe",
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://github.com/nvidia/caffe",
+					"branch": "4b8d54d892116b9cb6822a917065a616f56b1292"
+				}
+			],
+			"buildsystem": "cmake",
+			"config-opts": [
+				"-DCMAKE_INSTALL_PREFIX=/usr/local/caffe",
+				"-DUSE_NCCL=ON",
+				"-DUSE_CUDNN=ON",
+				"-DCUDA_ARCH_NAME=Manual",
+				"-DCUDA_ARCH_BIN=\"35 52 60 61\"",
+				"-DCUDA_ARCH_PTX=\"61\""
+			]
+		},
+		{
+			"name": "digits",
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://github.com/NVIDIA/DIGITS/",
+					"branch": "7a3d5f00f3ef0e81cdc3415b03c6ede98c3ef91c"
+				}
+			],
+			"build-commands": []
+		}
+	]
+}

@@ -101,12 +101,51 @@
 			]
 		},
 		{
+			"name": "lmdb",
+			"buildsystem": "simple",
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://github.com/LMDB/lmdb/archive/LMDB_0.9.22.tar.gz",
+					"sha256": "f3927859882eb608868c8c31586bb7eb84562a40a6bf5cc3e13b6b564641ea28",
+					"strip-components": 3
+				}
+			],
+			"build-commands": [
+				"sed -ri 's#^prefix\\s*=.*$#prefix = /app#' Makefile",
+				"make install"
+			],
+			"cleanup": [
+				"/bin",
+				"/include"
+			]
+		},
+		{
+			"name": "leveldb",
+			"buildsystem": "cmake",
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://github.com/google/leveldb/",
+					"commit": "4de9594f6fbfd69043239a5705b5f32065f02d34"
+				},
+				{
+					"type": "patch",
+					"path": "leveldb-oldcmakeworks.patch"
+				}
+			],
+			"cleanup": [
+				"/bin",
+				"/include"
+			]
+		},
+		{
 			"name": "caffe",
 			"sources": [
 				{
 					"type": "git",
 					"url": "https://github.com/nvidia/caffe",
-					"branch": "4b8d54d892116b9cb6822a917065a616f56b1292"
+					"commit": "4b8d54d892116b9cb6822a917065a616f56b1292"
 				}
 			],
 			"buildsystem": "cmake",
@@ -126,7 +165,7 @@
 				{
 					"type": "git",
 					"url": "https://github.com/NVIDIA/DIGITS/",
-					"branch": "7a3d5f00f3ef0e81cdc3415b03c6ede98c3ef91c"
+					"commit": "7a3d5f00f3ef0e81cdc3415b03c6ede98c3ef91c"
 				}
 			],
 			"build-commands": []

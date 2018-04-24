@@ -3,6 +3,9 @@
 	"runtime": "org.freedesktop.Platform",
 	"runtime-version": "1.6",
 	"sdk": "org.freedesktop.Sdk",
+	"sdk-extensions": [
+		"org.freedesktop.Sdk.Extension.gfortran-62"
+	],
 	"command": "digits",
 	"finish-args": [
 		"--share=ipc",
@@ -30,51 +33,6 @@
 					"sha256": "f73a6546fdf9fce9ff93a5015e0333a8af3062a152a9ad6bcb772c96687016cc",
 					"dest": "gmock/gtest"
 				}
-			]
-		},
-		{
-			"name": "pip-caffe-requirements",
-			"buildsystem": "simple",
-			"sources": [
-				{ "type": "file", "path": "pydistutils.cfg" }, 
-				{ "type": "file", "sha256": "1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d", "url": "https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "f5f6694ce668eb7a9b59550bfe4265258809c9b0665c206b26d697df2eef2a8b", "url": "https://files.pythonhosted.org/packages/27/45/10692bafc368df4b7bda95748e14eb0113a418ef60c12b8260c750b8c94d/Cython-0.28.2-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "2c51dff8ef3c447388fe5e4453d24a2bf128d3a4c32af3fabef1f01c6851ab82", "url": "https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "07ddea6bb649a257fc57ccae359a36d691b2ef8b9617971ae7d6f74ef6f67cad", "url": "https://files.pythonhosted.org/packages/fa/31/5f863f2672675d1e7c766cf325829ac357e75d7f96b150d5b9de68e5063e/h5py-2.7.1-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "0a45d844d11bec910974ed4adf5de60d42dc34b60960f8cc2b857e2008fba550", "url": "https://files.pythonhosted.org/packages/3d/f0/3770e603de61f62bc9f1935305daf0a66ec2e699b8617d466cc47803f5ba/ipython-5.4.1-py3-none-any.whl" },
-				{ "type": "file", "sha256": "72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8", "url": "https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "9576cb63897fbfa69df60f994082c3f4b8e6adb49cccb60efb2a80a208e6f996", "url": "https://files.pythonhosted.org/packages/7e/31/d6fedd4fb2c94755cd101191e581af30e1650ccce7a35bddb7930fed6574/kiwisolver-1.0.1-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "9c3378b3b4336cc63303e9fe5d054a337d50bafec80ac4628db19a598c0fcd38", "url": "https://files.pythonhosted.org/packages/ec/c1/ca3b4199bd4073e6430076f1edd8061f2f548e831eeddc3cbc077ebaa0ca/leveldb-0.194.tar.gz" },
-				{ "type": "file", "sha256": "bc4d7481f0e8ec94cb1afc4a59905d6274b3b4c389aba7a2539e071766671735", "url": "https://files.pythonhosted.org/packages/81/31/4e261379e0cd4e9bbacfc96b124ebac0706b44374bd1d34ef899796f741b/matplotlib-2.2.2-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "64272ca418972b70a196cb15d9c85a5a6041f09a2f32e0d30c0255f25d458bb1", "url": "https://files.pythonhosted.org/packages/11/42/f951cc6838a4dff6ce57211c4d7f8444809ccbe2134179950301e5c4c83c/networkx-2.1.zip" },
-				{ "type": "file", "sha256": "9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac", "url": "https://files.pythonhosted.org/packages/15/d8/dd071918c040f50fa1cf80da16423af51ff8ce4a0f2399b7bf8de45ac3d9/nose-1.3.7-py3-none-any.whl" },
-				{ "type": "file", "sha256": "da21856583a1f6ed0131e2094d6e6ef1881b09860777510f979e33d8361f7379", "url": "https://files.pythonhosted.org/packages/ad/ac/a8154670deedc6d482c4e43cdca61f645967a734575105a602d3ecb84bf7/numpy-1.11.0-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "052a66f58783a59ea38fdfee25de083b107baa81fdbe38fabd169d0f9efce2bf", "url": "https://files.pythonhosted.org/packages/99/0a/37930bbee7a06bb5ce7e12f7970b29a17a49605d0b08a72dee7ab76135bb/pandas-0.22.0-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "9783f4644a3ef8528a6f20374eeb434431a650c797ca6d8df0d81e30fffdfa24", "url": "https://files.pythonhosted.org/packages/b9/3c/e51a76fe78a877afd9acd95a51e3b7610c0983b19ef5a5dfa11735a619b8/pexpect-4.5.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "c9a2541f25aeabc070f12f452e1f2a8eae2abd51e1cd19e8430402bdf4c1d8b5", "url": "https://files.pythonhosted.org/packages/9f/17/daa142fc9be6b76f26f24eeeb9a138940671490b91cb5587393f297c8317/pickleshare-0.7.4-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "ea0091cd4100519cedfeea2c659f52291f535ac6725e2368bcf59e874f270efa", "url": "https://files.pythonhosted.org/packages/07/52/8e27b9c54cb70d379244771a58483928b3a02db3c657d466ed84eb18f22b/Pillow-5.1.0-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "1df952620eccb399c53ebb359cc7d9a8d3a9538cb34c5a1344bdbeb29fbcc381", "url": "https://files.pythonhosted.org/packages/04/d1/c6616dd03701e7e2073f06d5c3b41b012256e42b72561f16a7bd86dd7b43/prompt_toolkit-1.0.15-py3-none-any.whl" },
-				{ "type": "file", "sha256": "7222d6616108b33ad6cbeff8117062a73c43cdc8fa8f64f6a322ebeb663e710e", "url": "https://files.pythonhosted.org/packages/5b/c3/9b947e301e19bea75dc8c1fd3710eed5d2b31aa13ae13d5e38e891f784cc/protobuf-3.5.2.post1-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a", "url": "https://files.pythonhosted.org/packages/ff/4e/fa4a73ccfefe2b37d7b6898329e7dbcd1ac846ba3a3b26b294a78a3eb997/ptyprocess-0.5.2-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d", "url": "https://files.pythonhosted.org/packages/02/ee/b6e02dc6529e82b75bb06823ff7d005b141037cb1416b10c6f00fc419dca/Pygments-2.2.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010", "url": "https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "6f197348b46fb8cdf9f3fcfc2a7d5a97da95db3e2e8667cf657216274fe1b009", "url": "https://files.pythonhosted.org/packages/b4/7c/df59c89a753eb33c7c44e1dd42de0e9bc2ccdd5a4d576e0bfad97cc280cb/python-dateutil-1.5.tar.gz" },
-				{ "type": "file", "sha256": "40ae131e899ef68e9e14aa53ca063839c34f6a168afe622217b5b875492a1ee2", "url": "https://files.pythonhosted.org/packages/df/ec/e31302d355bcb9d207d9b858adc1ecc4a6d8c855730c8ba4ddbdd3f8eb8d/python-gflags-3.1.2.tar.gz" },
-				{ "type": "file", "sha256": "65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555", "url": "https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "c8795dcabedf97b3ad4978102140c40ab8f22579eb1e7516d251d57a58dd46c1", "url": "https://files.pythonhosted.org/packages/5a/1f/203c8886c7b94286ddbbf418779f4303774b65c20474a8b554598c483e90/PyWavelets-0.5.2-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab", "url": "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz" },
-				{ "type": "file", "sha256": "199ba92019c5549783aa629b615394bec7302572b6f5727017a78d3ccc737de9", "url": "https://files.pythonhosted.org/packages/64/18/402284ae09b6a2a8694e707b4924a1a9573bb4aa67923cf487978555e822/scikit_image-0.13.1-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "164f774de04e546fd10e1894d423b54e36255bb42887e005f0fbfb8eef6736f1", "url": "https://files.pythonhosted.org/packages/51/3d/494e1a81121c12233cb2f511e31b0dae3944008c81bbfa0218ec2d0038a8/scipy-1.0.1-cp35-cp35m-manylinux1_x86_64.whl" },
-				{ "type": "file", "sha256": "8010754433e3211b9cdbbf784b50f30e80bf40fc6b05eb5f865fab83300599b8", "url": "https://files.pythonhosted.org/packages/20/d7/04a0b689d3035143e2ff288f4b9ee4bf6ed80585cc121c90bfd85a1a8c2e/setuptools-39.0.1-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173", "url": "https://files.pythonhosted.org/packages/3d/57/4d9c9e3ae9a255cd4e1106bb57e24056d3d0709fc01b2e3e345898e49d5b/simplegeneric-0.8.1.zip" },
-				{ "type": "file", "sha256": "832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb", "url": "https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "6d14e47eab0e15799cf3cdcc86b0b98279da68522caace2bd7ce644287685f0a", "url": "https://files.pythonhosted.org/packages/e3/7b/e29ab3d51c8df66922fea216e2bddfcb6430fb29620e5165b16a216e0d3c/tornado-4.5.3.tar.gz" },
-				{ "type": "file", "sha256": "c6cb5e6f57c5a9bdaa40fa71ce7b4af30298fbab9ece9815b5d995ab6217c7d9", "url": "https://files.pythonhosted.org/packages/93/d6/abcb22de61d78e2fc3959c964628a5771e47e7cc60d53e9342e21ed6cc9a/traitlets-4.3.2-py2.py3-none-any.whl" },
-				{ "type": "file", "sha256": "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c", "url": "https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl" }
-			],
-			"build-commands": [
-				"mv pydistutils.cfg ~/.pydistutils.cfg",
-				"set -e -u; pip3 install --user --root=/app --no-index --find-links=. $(for f in *; do echo file://$PWD/$f; done)"
 			]
 		},
 		"boost.json",
@@ -180,6 +138,79 @@
 						"cd modules && rm -rf calib3d features2d flann java js ml shape stitching superres ts videoio videostab viz"
 					]
 				}
+			]
+		},
+		{
+			"name": "gfortran",
+			"buildsystem": "simple",
+			"build-commands": [ "/usr/lib/sdk/gfortran-62/install.sh" ]
+		},
+		{
+			"name": "lapack",
+			"buildsystem": "cmake",
+			"builddir": true,
+			"config-opts": [
+				"-DCMAKE_INSTALL_PREFIX=/app",
+				"-DCMAKE_INSTALL_LIBDIR=lib",
+				"-DCMAKE_BUILD_TYPE=Release",
+				"-DBUILD_SHARED_LIBS=ON",
+				"-DBUILD_TESTING=OFF",
+				"-DCMAKE_Fortran_COMPILER=/usr/lib/sdk/gfortran-62/bin/gfortran",
+				"-DLAPACKE=ON",
+				"-DCBLAS=ON"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "http://www.netlib.org/lapack/lapack-3.8.0.tar.gz",
+					"sha512": "17786cb7306fccdc9b4a242de7f64fc261ebe6a10b6ec55f519deb4cb673cb137e8742aa5698fd2dc52f1cd56d3bd116af3f593a01dcf6770c4dcc86c50b2a7f"
+				}
+			],
+			"cleanup": [ "/lib/cmake" ]
+		},
+		{
+			"name": "pip-caffe-requirements",
+			"buildsystem": "simple",
+			"sources": [
+				{ "type": "file", "path": "pydistutils.cfg" }, 
+				{ "type": "file", "sha256": "1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d", "url": "https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "f5f6694ce668eb7a9b59550bfe4265258809c9b0665c206b26d697df2eef2a8b", "url": "https://files.pythonhosted.org/packages/27/45/10692bafc368df4b7bda95748e14eb0113a418ef60c12b8260c750b8c94d/Cython-0.28.2-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "2c51dff8ef3c447388fe5e4453d24a2bf128d3a4c32af3fabef1f01c6851ab82", "url": "https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "07ddea6bb649a257fc57ccae359a36d691b2ef8b9617971ae7d6f74ef6f67cad", "url": "https://files.pythonhosted.org/packages/fa/31/5f863f2672675d1e7c766cf325829ac357e75d7f96b150d5b9de68e5063e/h5py-2.7.1-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "0a45d844d11bec910974ed4adf5de60d42dc34b60960f8cc2b857e2008fba550", "url": "https://files.pythonhosted.org/packages/3d/f0/3770e603de61f62bc9f1935305daf0a66ec2e699b8617d466cc47803f5ba/ipython-5.4.1-py3-none-any.whl" },
+				{ "type": "file", "sha256": "72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8", "url": "https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "9576cb63897fbfa69df60f994082c3f4b8e6adb49cccb60efb2a80a208e6f996", "url": "https://files.pythonhosted.org/packages/7e/31/d6fedd4fb2c94755cd101191e581af30e1650ccce7a35bddb7930fed6574/kiwisolver-1.0.1-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "9c3378b3b4336cc63303e9fe5d054a337d50bafec80ac4628db19a598c0fcd38", "url": "https://files.pythonhosted.org/packages/ec/c1/ca3b4199bd4073e6430076f1edd8061f2f548e831eeddc3cbc077ebaa0ca/leveldb-0.194.tar.gz" },
+				{ "type": "file", "sha256": "bc4d7481f0e8ec94cb1afc4a59905d6274b3b4c389aba7a2539e071766671735", "url": "https://files.pythonhosted.org/packages/81/31/4e261379e0cd4e9bbacfc96b124ebac0706b44374bd1d34ef899796f741b/matplotlib-2.2.2-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "64272ca418972b70a196cb15d9c85a5a6041f09a2f32e0d30c0255f25d458bb1", "url": "https://files.pythonhosted.org/packages/11/42/f951cc6838a4dff6ce57211c4d7f8444809ccbe2134179950301e5c4c83c/networkx-2.1.zip" },
+				{ "type": "file", "sha256": "9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac", "url": "https://files.pythonhosted.org/packages/15/d8/dd071918c040f50fa1cf80da16423af51ff8ce4a0f2399b7bf8de45ac3d9/nose-1.3.7-py3-none-any.whl" },
+				{ "type": "file", "sha256": "da21856583a1f6ed0131e2094d6e6ef1881b09860777510f979e33d8361f7379", "url": "https://files.pythonhosted.org/packages/ad/ac/a8154670deedc6d482c4e43cdca61f645967a734575105a602d3ecb84bf7/numpy-1.11.0-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "052a66f58783a59ea38fdfee25de083b107baa81fdbe38fabd169d0f9efce2bf", "url": "https://files.pythonhosted.org/packages/99/0a/37930bbee7a06bb5ce7e12f7970b29a17a49605d0b08a72dee7ab76135bb/pandas-0.22.0-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "9783f4644a3ef8528a6f20374eeb434431a650c797ca6d8df0d81e30fffdfa24", "url": "https://files.pythonhosted.org/packages/b9/3c/e51a76fe78a877afd9acd95a51e3b7610c0983b19ef5a5dfa11735a619b8/pexpect-4.5.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "c9a2541f25aeabc070f12f452e1f2a8eae2abd51e1cd19e8430402bdf4c1d8b5", "url": "https://files.pythonhosted.org/packages/9f/17/daa142fc9be6b76f26f24eeeb9a138940671490b91cb5587393f297c8317/pickleshare-0.7.4-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "ea0091cd4100519cedfeea2c659f52291f535ac6725e2368bcf59e874f270efa", "url": "https://files.pythonhosted.org/packages/07/52/8e27b9c54cb70d379244771a58483928b3a02db3c657d466ed84eb18f22b/Pillow-5.1.0-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "1df952620eccb399c53ebb359cc7d9a8d3a9538cb34c5a1344bdbeb29fbcc381", "url": "https://files.pythonhosted.org/packages/04/d1/c6616dd03701e7e2073f06d5c3b41b012256e42b72561f16a7bd86dd7b43/prompt_toolkit-1.0.15-py3-none-any.whl" },
+				{ "type": "file", "sha256": "7222d6616108b33ad6cbeff8117062a73c43cdc8fa8f64f6a322ebeb663e710e", "url": "https://files.pythonhosted.org/packages/5b/c3/9b947e301e19bea75dc8c1fd3710eed5d2b31aa13ae13d5e38e891f784cc/protobuf-3.5.2.post1-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a", "url": "https://files.pythonhosted.org/packages/ff/4e/fa4a73ccfefe2b37d7b6898329e7dbcd1ac846ba3a3b26b294a78a3eb997/ptyprocess-0.5.2-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d", "url": "https://files.pythonhosted.org/packages/02/ee/b6e02dc6529e82b75bb06823ff7d005b141037cb1416b10c6f00fc419dca/Pygments-2.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010", "url": "https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "6f197348b46fb8cdf9f3fcfc2a7d5a97da95db3e2e8667cf657216274fe1b009", "url": "https://files.pythonhosted.org/packages/b4/7c/df59c89a753eb33c7c44e1dd42de0e9bc2ccdd5a4d576e0bfad97cc280cb/python-dateutil-1.5.tar.gz" },
+				{ "type": "file", "sha256": "40ae131e899ef68e9e14aa53ca063839c34f6a168afe622217b5b875492a1ee2", "url": "https://files.pythonhosted.org/packages/df/ec/e31302d355bcb9d207d9b858adc1ecc4a6d8c855730c8ba4ddbdd3f8eb8d/python-gflags-3.1.2.tar.gz" },
+				{ "type": "file", "sha256": "65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555", "url": "https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "c8795dcabedf97b3ad4978102140c40ab8f22579eb1e7516d251d57a58dd46c1", "url": "https://files.pythonhosted.org/packages/5a/1f/203c8886c7b94286ddbbf418779f4303774b65c20474a8b554598c483e90/PyWavelets-0.5.2-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab", "url": "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz" },
+				{ "type": "file", "sha256": "199ba92019c5549783aa629b615394bec7302572b6f5727017a78d3ccc737de9", "url": "https://files.pythonhosted.org/packages/64/18/402284ae09b6a2a8694e707b4924a1a9573bb4aa67923cf487978555e822/scikit_image-0.13.1-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "164f774de04e546fd10e1894d423b54e36255bb42887e005f0fbfb8eef6736f1", "url": "https://files.pythonhosted.org/packages/51/3d/494e1a81121c12233cb2f511e31b0dae3944008c81bbfa0218ec2d0038a8/scipy-1.0.1-cp35-cp35m-manylinux1_x86_64.whl" },
+				{ "type": "file", "sha256": "8010754433e3211b9cdbbf784b50f30e80bf40fc6b05eb5f865fab83300599b8", "url": "https://files.pythonhosted.org/packages/20/d7/04a0b689d3035143e2ff288f4b9ee4bf6ed80585cc121c90bfd85a1a8c2e/setuptools-39.0.1-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173", "url": "https://files.pythonhosted.org/packages/3d/57/4d9c9e3ae9a255cd4e1106bb57e24056d3d0709fc01b2e3e345898e49d5b/simplegeneric-0.8.1.zip" },
+				{ "type": "file", "sha256": "832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb", "url": "https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "6d14e47eab0e15799cf3cdcc86b0b98279da68522caace2bd7ce644287685f0a", "url": "https://files.pythonhosted.org/packages/e3/7b/e29ab3d51c8df66922fea216e2bddfcb6430fb29620e5165b16a216e0d3c/tornado-4.5.3.tar.gz" },
+				{ "type": "file", "sha256": "c6cb5e6f57c5a9bdaa40fa71ce7b4af30298fbab9ece9815b5d995ab6217c7d9", "url": "https://files.pythonhosted.org/packages/93/d6/abcb22de61d78e2fc3959c964628a5771e47e7cc60d53e9342e21ed6cc9a/traitlets-4.3.2-py2.py3-none-any.whl" },
+				{ "type": "file", "sha256": "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c", "url": "https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl" }
+			],
+			"build-commands": [
+				"mv pydistutils.cfg ~/.pydistutils.cfg",
+				"set -e -u; pip3 install --user --root=/app --no-index --find-links=. $(for f in *; do echo file://$PWD/$f; done)"
 			]
 		},
 		{

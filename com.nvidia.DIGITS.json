@@ -79,6 +79,28 @@
 			]
 		},
 		{
+			"name": "hdf5",
+			"buildsystem": "autotools",
+			"config-opts": [
+				"--disable-silent-rules",
+				"--disable-fortran",
+				"--disable-fortran2003",
+				"--enable-shared"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/hdf5-1.10.1.tar.bz2",
+					"sha256": "9c5ce1e33d2463fb1a42dd04daacbc22104e57676e2204e3d66b1ef54b88ebf2"
+				}
+			],
+			"cleanup": [
+				"/bin",
+				"/include",
+				"/share/hdf5_examples"
+			]
+		},
+		{
 			"name": "caffe",
 			"sources": [
 				{
@@ -89,7 +111,8 @@
 			],
 			"buildsystem": "cmake",
 			"config-opts": [
-				"-DCMAKE_INSTALL_PREFIX=/usr/local/caffe",
+				"-DCMAKE_INSTALL_PREFIX=/app/caffe",
+				"-DCMAKE_PREFIX_PATH=/app/",
 				"-DUSE_NCCL=ON",
 				"-DUSE_CUDNN=ON",
 				"-DCUDA_ARCH_NAME=Manual",

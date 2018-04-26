@@ -214,23 +214,46 @@
 			]
 		},
 		{
+			"name": "gflags",
+			"buildsystem": "cmake",
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://github.com/gflags/gflags/archive/v2.2.1.tar.gz",
+					"sha512": "e919cbdcff1f993ddbfa9c06d8e595566a4717c27ff62f388a64c0e6b4683a93211c24ce78485eae84c2c76053341574064e6c56af185fc2782e2816b26e1fc9"
+				}
+			],
+			"cleanup": [ "/lib/cmake" ]
+		},
+		{
+			"name": "glog",
+			"buildsystem": "cmake",
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://github.com/google/glog/archive/v0.3.5.tar.gz",
+					"sha512": "a54a3b8b4b7660d7558ba5168c659bc3c8323c30908a4f6a4bbc6f9cd899350f3243aabc720daebfdeb799b276b51ba1eaa1a0f83149c4e1a038d552ada1ed72"
+				}
+			],
+			"cleanup": [ "/lib/cmake" ]
+		},
+		{
 			"name": "caffe",
 			"sources": [
 				{
 					"type": "git",
 					"url": "https://github.com/nvidia/caffe",
 					"commit": "4b8d54d892116b9cb6822a917065a616f56b1292"
+				},
+				{
+					"type": "file",
+					"path": "aur-caffe-modifications.sh"
 				}
 			],
-			"buildsystem": "cmake",
-			"config-opts": [
-				"-DCMAKE_INSTALL_PREFIX=/app/caffe",
-				"-DCMAKE_PREFIX_PATH=/app/",
-				"-DUSE_NCCL=ON",
-				"-DUSE_CUDNN=ON",
-				"-DCUDA_ARCH_NAME=Manual",
-				"-DCUDA_ARCH_BIN=\"35 52 60 61\"",
-				"-DCUDA_ARCH_PTX=\"61\""
+			"buildsystem": "simple",
+			"build-commands": [
+				"sh aur-caffe-modifications.sh",
+				"make -j$(nproc)"
 			]
 		},
 		{

@@ -17,7 +17,7 @@ sed -i '/OPENCV_VERSION/s/^#[[:space:]]//g'                 Makefile.config
 
 # use gcc6 (CUDA 9.0 code requires gcc6)
 #sed -i '/CUSTOM_CXX/s/^#[[:space:]]//;/CUSTOM_CXX/s/$/-6/' Makefile.config
-# we already have gcc6, but it's not symlinked to that name
+# we already have gcc6 on org.freedesktop.Sdk//1.6, but it's not symlinked to that name
 
 # set CUDA directory
 sed -i '/CUDA_DIR/ s#/usr/local/cuda#/app#' Makefile.config
@@ -40,9 +40,6 @@ sed -i "$((_py2inc_line+1))s/^/#/" Makefile.config
 sed -i "$((_py3inc_line))s/^#[[:space:]]//"   Makefile.config # uncomment python3 PYTHON_INCLUDE lines
 sed -i "$((_py3inc_line+1))s/^#//"            Makefile.config
 sed -i "$((_py3libs_line))s/^#[[:space:]]//"  Makefile.config # uncomment PYTHON_LIBRARIES line
-sed -i "$((_py3libs_line))s/5/6/"             Makefile.config # change version in PYTHON_LIBRARIES
-sed -i "$((_py3inc_line))s/5/6/"              Makefile.config # change version in python3 PYTHON_INCLUDE
-sed -i "$((_py3inc_line+1))s/5/6/;$((_py3inc_line+1))s/dist/site/" Makefile.config
 
 # use python layers
 sed -i '/WITH_PYTHON_LAYER/s/^#[[:space:]]//g' Makefile.config

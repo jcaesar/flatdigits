@@ -42,4 +42,4 @@
 				"mv pydistutils.cfg ~/.pydistutils.cfg",
 				"set -e -u; pip3 install --user --root=/app --no-index --find-links=. $(for f in *; do echo file://$PWD/$f; done)"
 			]
-		},
+		}

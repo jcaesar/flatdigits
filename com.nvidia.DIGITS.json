@@ -281,7 +281,8 @@
 			"buildsystem": "simple",
 			"build-commands": [
 				"sh aur-caffe-modifications.sh",
-				"make -j$(nproc)"
+				"for t in all pycaffe; do make -j$(nproc) $t; done",
+				"make distribute"
 			]
 		},
 		{
@@ -293,6 +294,7 @@
 					"commit": "7a3d5f00f3ef0e81cdc3415b03c6ede98c3ef91c"
 				}
 			],
+			"buildsystem": "simple",
 			"build-commands": []
 		}
 	]
